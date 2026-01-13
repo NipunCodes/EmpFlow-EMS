@@ -89,7 +89,7 @@ public class Main {
                     AuthController authController = new AuthController(new AuthService(new UserDAOImpl()));
                     User newUser = authController.register(newUsername, newPassword, roleId);
                     if (newUser != null) {
-                        System.out.println("User registered successfully: " + newUser);
+                        System.out.println("User " + newUser.getUsername() + " registered successfully.");
                     } else {
                         System.out.println("Failed to register user.");
                     }

@@ -132,7 +132,7 @@ public class UserDAOImpl implements UserDAO {
             ResultSet rs = pstmt.executeQuery();
             if (rs.next()) {
                 return new User(
-                        rs.getInt("id"),
+                        rs.getInt("user_id"),
                         rs.getString("username"),
                         rs.getString("password"),
                         rs.getInt("role_id")
