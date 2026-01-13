@@ -104,7 +104,7 @@ public class UserDAOImpl implements UserDAO {
     }
 
     @Override
-    public User loginUser(String username, String password) {
+    public User findByUsernameAndPassword(String username, String password) {
         String sql = "SELECT * FROM users WHERE username = ? AND password = ?";
         try (PreparedStatement pstmt = conn.prepareStatement(sql)) {
             pstmt.setString(1, username);

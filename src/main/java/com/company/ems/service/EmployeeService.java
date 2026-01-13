@@ -1,6 +1,6 @@
 package com.company.ems.service;
 
-import com.company.ems.dao.EmployeeDao;
+import com.company.ems.dao.EmployeeDAO;
 import com.company.ems.model.Employee;
 import com.company.ems.model.User;
 
@@ -8,10 +8,10 @@ import java.util.List;
 
 public class EmployeeService {
 
-    private final EmployeeDao employeeDao;
+    private final EmployeeDAO employeeDao;
     private final AuthService authService;
 
-    public EmployeeService(EmployeeDao employeeDao, AuthService authService){
+    public EmployeeService(EmployeeDAO employeeDao, AuthService authService){
         this.employeeDao = employeeDao;
         this.authService = authService;
     }

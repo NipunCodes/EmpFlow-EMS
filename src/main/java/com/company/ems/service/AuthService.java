@@ -1,15 +1,15 @@
 package com.company.ems.service;
 
-import com.company.ems.dao.UserDao;
+import com.company.ems.dao.UserDAO;
 import com.company.ems.model.User;
 import com.company.ems.model.Role;
 
 public class AuthService {
 
-    private final UserDao userDao;
+    private final UserDAO userDao;
 
     // Constructor injection
-    public AuthService(UserDao userDao){
+    public AuthService(UserDAO userDao){
         this.userDao = userDao;
     }
 
@@ -38,17 +38,17 @@ public class AuthService {
 
     // Helper method to check if user is admin
     public boolean isAdmin(User user){
-        if (user == null || user.getRole() == null){
+        if (user == null){
             return false;
         }
-        return "ADMIN".equalsIgnoreCase(user.getRole().getRoleName());
+        return user.getRole_id() == 1; // Role_id 1 is for admin
     }
 
     //Helper method to check if user is HR
     public boolean isHR(User user){
-        if (user == null || user.getRole() == null){
+        if (user == null){
             return false;
         }
-        return "HR".equalsIgnoreCase(user.getRole().getRoleName());
+        return user.getRole_id() == 2; // Role_id 2 is for HR
     }
 }
